@@ -19,11 +19,11 @@ connection.once("open", () => {
 });
 
 const usersRouter = require("./router/userRouter");
-app.use("/", usersRouter);
-
 app.get("/", (req, res) => {
   res.json("Server Started.");
 });
+
+app.use("/", usersRouter);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("App is running on port 5000");
